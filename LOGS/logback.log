@@ -1,0 +1,254 @@
+[2024-10-15 09:02:01:464] INFO  11596 --- [           main] c.s.s.SpringstudyApplication             : Starting SpringstudyApplication using Java 17.0.12 with PID 11596 (C:\Users\playdata\Desktop\develop\springStudy\build\classes\java\main started by playdata in C:\Users\playdata\Desktop\develop\springStudy)
+[2024-10-15 09:02:01:467] DEBUG 11596 --- [           main] c.s.s.SpringstudyApplication             : Running with Spring Boot v3.2.10, Spring v6.1.13
+[2024-10-15 09:02:01:468] INFO  11596 --- [           main] c.s.s.SpringstudyApplication             : No active profile set, falling back to 1 default profile: "default"
+[2024-10-15 09:02:03:2530] INFO  11596 --- [           main] c.s.s.SpringstudyApplication             : Started SpringstudyApplication in 2.446 seconds (process running for 2.849)
+[2024-10-15 09:02:22:21414] INFO  11596 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-10-15 09:02:22:21415] INFO  11596 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-10-15 09:02:22:21803] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.mapper.BoardMapper.findAll     : ==>  Preparing: SELECT B.board_no, B.title, B.content, B.writer, B.reg_date, B.view_count, COUNT(R.reply_no) AS reply_count FROM tbl_board B LEFT JOIN tbl_reply R ON B.board_no = R.board_no GROUP BY B.board_no ORDER BY board_no DESC LIMIT ?, ?
+[2024-10-15 09:02:22:21822] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.mapper.BoardMapper.findAll     : ==> Parameters: 0(Integer), 6(Integer)
+[2024-10-15 09:02:22:21848] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.mapper.BoardMapper.findAll     : <==      Total: 6
+[2024-10-15 09:02:22:21853] INFO  11596 --- [nio-8181-exec-1] c.s.s.s.chap04.service.BoardService      : boardList: [BoardDetailResponseDTO(boardNo=102, title=야호, content=<p>야호야호</p>
+, regDate=2024-10-11 15:17:06, writer=김춘식, viewCount=11, replyCount=2), BoardDetailResponseDTO(boardNo=100, title=재밌는 글 100, content=재밌는 내용 100, regDate=2024-10-08 09:40:06, writer=재밌는 사람 100, viewCount=32, replyCount=13), BoardDetailResponseDTO(boardNo=99, title=재밌는 글 99, content=재밌는 내용 99, regDate=2024-10-08 09:40:06, writer=재밌는 사람 99, viewCount=6, replyCount=14), BoardDetailResponseDTO(boardNo=98, title=재밌는 글 98, content=재밌는 내용 98, regDate=2024-10-08 09:40:06, writer=재밌는 사람 98, viewCount=1, replyCount=6), BoardDetailResponseDTO(boardNo=97, title=재밌는 글 97, content=재밌는 내용 97, regDate=2024-10-08 09:40:06, writer=재밌는 사람 97, viewCount=1, replyCount=9), BoardDetailResponseDTO(boardNo=96, title=재밌는 글 96, content=재밌는 내용 96, regDate=2024-10-08 09:40:06, writer=재밌는 사람 96, viewCount=0, replyCount=8)]
+[2024-10-15 09:02:22:21856] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.m.B.getTotalCount              : ==>  Preparing: SELECT COUNT(*) FROM tbl_board
+[2024-10-15 09:02:22:21857] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.m.B.getTotalCount              : ==> Parameters: 
+[2024-10-15 09:02:22:21859] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.m.B.getTotalCount              : <==      Total: 1
+[2024-10-15 09:02:26:25261] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.m.B.updateViewCount            : ==>  Preparing: UPDATE tbl_board SET view_count = view_count + 1 WHERE board_no = ?
+[2024-10-15 09:02:26:25261] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.m.B.updateViewCount            : ==> Parameters: 100(Integer)
+[2024-10-15 09:02:26:25269] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.m.B.updateViewCount            : <==    Updates: 1
+[2024-10-15 09:02:26:25270] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.mapper.BoardMapper.findOne     : ==>  Preparing: SELECT * FROM tbl_board WHERE board_no = ?
+[2024-10-15 09:02:26:25270] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.mapper.BoardMapper.findOne     : ==> Parameters: 100(Integer)
+[2024-10-15 09:02:26:25274] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.mapper.BoardMapper.findOne     : <==      Total: 1
+[2024-10-15 09:02:30:29441] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.m.MemberMapper.findOne         : ==>  Preparing: SELECT * FROM tbl_member WHERE account = ?
+[2024-10-15 09:02:30:29441] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.m.MemberMapper.findOne         : ==> Parameters: park1234(String)
+[2024-10-15 09:02:30:29444] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.m.MemberMapper.findOne         : <==      Total: 1
+[2024-10-15 09:02:30:29528] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.m.MemberMapper.findOne         : ==>  Preparing: SELECT * FROM tbl_member WHERE account = ?
+[2024-10-15 09:02:30:29528] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.m.MemberMapper.findOne         : ==> Parameters: park1234(String)
+[2024-10-15 09:02:30:29529] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.m.MemberMapper.findOne         : <==      Total: 1
+[2024-10-15 09:02:30:29537] DEBUG 11596 --- [io-8181-exec-10] c.s.s.s.c.mapper.BoardMapper.findAll     : ==>  Preparing: SELECT B.board_no, B.title, B.content, B.writer, B.reg_date, B.view_count, COUNT(R.reply_no) AS reply_count FROM tbl_board B LEFT JOIN tbl_reply R ON B.board_no = R.board_no GROUP BY B.board_no ORDER BY board_no DESC LIMIT ?, ?
+[2024-10-15 09:02:30:29538] DEBUG 11596 --- [io-8181-exec-10] c.s.s.s.c.mapper.BoardMapper.findAll     : ==> Parameters: 0(Integer), 6(Integer)
+[2024-10-15 09:02:30:29542] DEBUG 11596 --- [io-8181-exec-10] c.s.s.s.c.mapper.BoardMapper.findAll     : <==      Total: 6
+[2024-10-15 09:02:30:29542] INFO  11596 --- [io-8181-exec-10] c.s.s.s.chap04.service.BoardService      : boardList: [BoardDetailResponseDTO(boardNo=102, title=야호, content=<p>야호야호</p>
+, regDate=2024-10-11 15:17:06, writer=김춘식, viewCount=11, replyCount=2), BoardDetailResponseDTO(boardNo=100, title=재밌는 글 100, content=재밌는 내용 100, regDate=2024-10-08 09:40:06, writer=재밌는 사람 100, viewCount=33, replyCount=13), BoardDetailResponseDTO(boardNo=99, title=재밌는 글 99, content=재밌는 내용 99, regDate=2024-10-08 09:40:06, writer=재밌는 사람 99, viewCount=6, replyCount=14), BoardDetailResponseDTO(boardNo=98, title=재밌는 글 98, content=재밌는 내용 98, regDate=2024-10-08 09:40:06, writer=재밌는 사람 98, viewCount=1, replyCount=6), BoardDetailResponseDTO(boardNo=97, title=재밌는 글 97, content=재밌는 내용 97, regDate=2024-10-08 09:40:06, writer=재밌는 사람 97, viewCount=1, replyCount=9), BoardDetailResponseDTO(boardNo=96, title=재밌는 글 96, content=재밌는 내용 96, regDate=2024-10-08 09:40:06, writer=재밌는 사람 96, viewCount=0, replyCount=8)]
+[2024-10-15 09:02:30:29543] DEBUG 11596 --- [io-8181-exec-10] c.s.s.s.c.m.B.getTotalCount              : ==>  Preparing: SELECT COUNT(*) FROM tbl_board
+[2024-10-15 09:02:30:29543] DEBUG 11596 --- [io-8181-exec-10] c.s.s.s.c.m.B.getTotalCount              : ==> Parameters: 
+[2024-10-15 09:02:30:29545] DEBUG 11596 --- [io-8181-exec-10] c.s.s.s.c.m.B.getTotalCount              : <==      Total: 1
+[2024-10-15 09:02:37:36530] DEBUG 11596 --- [nio-8181-exec-3] c.s.s.s.c.m.B.updateViewCount            : ==>  Preparing: UPDATE tbl_board SET view_count = view_count + 1 WHERE board_no = ?
+[2024-10-15 09:02:37:36530] DEBUG 11596 --- [nio-8181-exec-3] c.s.s.s.c.m.B.updateViewCount            : ==> Parameters: 102(Integer)
+[2024-10-15 09:02:37:36557] DEBUG 11596 --- [nio-8181-exec-3] c.s.s.s.c.m.B.updateViewCount            : <==    Updates: 1
+[2024-10-15 09:02:37:36557] DEBUG 11596 --- [nio-8181-exec-3] c.s.s.s.c.mapper.BoardMapper.findOne     : ==>  Preparing: SELECT * FROM tbl_board WHERE board_no = ?
+[2024-10-15 09:02:37:36558] DEBUG 11596 --- [nio-8181-exec-3] c.s.s.s.c.mapper.BoardMapper.findOne     : ==> Parameters: 102(Integer)
+[2024-10-15 09:02:37:36560] DEBUG 11596 --- [nio-8181-exec-3] c.s.s.s.c.mapper.BoardMapper.findOne     : <==      Total: 1
+[2024-10-15 09:02:37:36581] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.mapper.ReplyMapper.findAll     : ==>  Preparing: SELECT * FROM tbl_reply WHERE board_no = ? ORDER BY reply_no LIMIT ?, ?
+[2024-10-15 09:02:37:36582] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.mapper.ReplyMapper.findAll     : ==> Parameters: 102(Integer), 0(Integer), 5(Integer)
+[2024-10-15 09:02:37:36585] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.mapper.ReplyMapper.findAll     : <==      Total: 2
+[2024-10-15 09:02:37:36587] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.mapper.ReplyMapper.count       : ==>  Preparing: SELECT COUNT(*) FROM tbl_reply WHERE board_no = ?
+[2024-10-15 09:02:37:36587] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.mapper.ReplyMapper.count       : ==> Parameters: 102(Integer)
+[2024-10-15 09:02:37:36588] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.mapper.ReplyMapper.count       : <==      Total: 1
+[2024-10-15 09:02:39:38970] DEBUG 11596 --- [nio-8181-exec-9] c.s.s.s.c.mapper.BoardMapper.findAll     : ==>  Preparing: SELECT B.board_no, B.title, B.content, B.writer, B.reg_date, B.view_count, COUNT(R.reply_no) AS reply_count FROM tbl_board B LEFT JOIN tbl_reply R ON B.board_no = R.board_no GROUP BY B.board_no ORDER BY board_no DESC LIMIT ?, ?
+[2024-10-15 09:02:39:38970] DEBUG 11596 --- [nio-8181-exec-9] c.s.s.s.c.mapper.BoardMapper.findAll     : ==> Parameters: 0(Integer), 6(Integer)
+[2024-10-15 09:02:39:38974] DEBUG 11596 --- [nio-8181-exec-9] c.s.s.s.c.mapper.BoardMapper.findAll     : <==      Total: 6
+[2024-10-15 09:02:39:38974] INFO  11596 --- [nio-8181-exec-9] c.s.s.s.chap04.service.BoardService      : boardList: [BoardDetailResponseDTO(boardNo=102, title=야호, content=<p>야호야호</p>
+, regDate=2024-10-11 15:17:06, writer=김춘식, viewCount=12, replyCount=2), BoardDetailResponseDTO(boardNo=100, title=재밌는 글 100, content=재밌는 내용 100, regDate=2024-10-08 09:40:06, writer=재밌는 사람 100, viewCount=33, replyCount=13), BoardDetailResponseDTO(boardNo=99, title=재밌는 글 99, content=재밌는 내용 99, regDate=2024-10-08 09:40:06, writer=재밌는 사람 99, viewCount=6, replyCount=14), BoardDetailResponseDTO(boardNo=98, title=재밌는 글 98, content=재밌는 내용 98, regDate=2024-10-08 09:40:06, writer=재밌는 사람 98, viewCount=1, replyCount=6), BoardDetailResponseDTO(boardNo=97, title=재밌는 글 97, content=재밌는 내용 97, regDate=2024-10-08 09:40:06, writer=재밌는 사람 97, viewCount=1, replyCount=9), BoardDetailResponseDTO(boardNo=96, title=재밌는 글 96, content=재밌는 내용 96, regDate=2024-10-08 09:40:06, writer=재밌는 사람 96, viewCount=0, replyCount=8)]
+[2024-10-15 09:02:39:38975] DEBUG 11596 --- [nio-8181-exec-9] c.s.s.s.c.m.B.getTotalCount              : ==>  Preparing: SELECT COUNT(*) FROM tbl_board
+[2024-10-15 09:02:39:38975] DEBUG 11596 --- [nio-8181-exec-9] c.s.s.s.c.m.B.getTotalCount              : ==> Parameters: 
+[2024-10-15 09:02:39:38977] DEBUG 11596 --- [nio-8181-exec-9] c.s.s.s.c.m.B.getTotalCount              : <==      Total: 1
+[2024-10-15 09:02:40:39572] DEBUG 11596 --- [nio-8181-exec-3] c.s.s.s.c.m.B.updateViewCount            : ==>  Preparing: UPDATE tbl_board SET view_count = view_count + 1 WHERE board_no = ?
+[2024-10-15 09:02:40:39572] DEBUG 11596 --- [nio-8181-exec-3] c.s.s.s.c.m.B.updateViewCount            : ==> Parameters: 100(Integer)
+[2024-10-15 09:02:40:39580] DEBUG 11596 --- [nio-8181-exec-3] c.s.s.s.c.m.B.updateViewCount            : <==    Updates: 1
+[2024-10-15 09:02:40:39580] DEBUG 11596 --- [nio-8181-exec-3] c.s.s.s.c.mapper.BoardMapper.findOne     : ==>  Preparing: SELECT * FROM tbl_board WHERE board_no = ?
+[2024-10-15 09:02:40:39581] DEBUG 11596 --- [nio-8181-exec-3] c.s.s.s.c.mapper.BoardMapper.findOne     : ==> Parameters: 100(Integer)
+[2024-10-15 09:02:40:39582] DEBUG 11596 --- [nio-8181-exec-3] c.s.s.s.c.mapper.BoardMapper.findOne     : <==      Total: 1
+[2024-10-15 09:02:40:39611] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.mapper.ReplyMapper.findAll     : ==>  Preparing: SELECT * FROM tbl_reply WHERE board_no = ? ORDER BY reply_no LIMIT ?, ?
+[2024-10-15 09:02:40:39615] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.mapper.ReplyMapper.findAll     : ==> Parameters: 100(Integer), 0(Integer), 5(Integer)
+[2024-10-15 09:02:40:39618] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.mapper.ReplyMapper.findAll     : <==      Total: 5
+[2024-10-15 09:02:40:39619] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.mapper.ReplyMapper.count       : ==>  Preparing: SELECT COUNT(*) FROM tbl_reply WHERE board_no = ?
+[2024-10-15 09:02:40:39620] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.mapper.ReplyMapper.count       : ==> Parameters: 100(Integer)
+[2024-10-15 09:02:40:39621] DEBUG 11596 --- [nio-8181-exec-1] c.s.s.s.c.mapper.ReplyMapper.count       : <==      Total: 1
+[2024-10-15 09:02:50:50121] DEBUG 11596 --- [nio-8181-exec-9] c.s.s.s.c.mapper.BoardMapper.findAll     : ==>  Preparing: SELECT B.board_no, B.title, B.content, B.writer, B.reg_date, B.view_count, COUNT(R.reply_no) AS reply_count FROM tbl_board B LEFT JOIN tbl_reply R ON B.board_no = R.board_no GROUP BY B.board_no ORDER BY board_no DESC LIMIT ?, ?
+[2024-10-15 09:02:50:50122] DEBUG 11596 --- [nio-8181-exec-9] c.s.s.s.c.mapper.BoardMapper.findAll     : ==> Parameters: 0(Integer), 6(Integer)
+[2024-10-15 09:02:50:50126] DEBUG 11596 --- [nio-8181-exec-9] c.s.s.s.c.mapper.BoardMapper.findAll     : <==      Total: 6
+[2024-10-15 09:02:50:50128] INFO  11596 --- [nio-8181-exec-9] c.s.s.s.chap04.service.BoardService      : boardList: [BoardDetailResponseDTO(boardNo=102, title=야호, content=<p>야호야호</p>
+, regDate=2024-10-11 15:17:06, writer=김춘식, viewCount=12, replyCount=2), BoardDetailResponseDTO(boardNo=100, title=재밌는 글 100, content=재밌는 내용 100, regDate=2024-10-08 09:40:06, writer=재밌는 사람 100, viewCount=34, replyCount=13), BoardDetailResponseDTO(boardNo=99, title=재밌는 글 99, content=재밌는 내용 99, regDate=2024-10-08 09:40:06, writer=재밌는 사람 99, viewCount=6, replyCount=14), BoardDetailResponseDTO(boardNo=98, title=재밌는 글 98, content=재밌는 내용 98, regDate=2024-10-08 09:40:06, writer=재밌는 사람 98, viewCount=1, replyCount=6), BoardDetailResponseDTO(boardNo=97, title=재밌는 글 97, content=재밌는 내용 97, regDate=2024-10-08 09:40:06, writer=재밌는 사람 97, viewCount=1, replyCount=9), BoardDetailResponseDTO(boardNo=96, title=재밌는 글 96, content=재밌는 내용 96, regDate=2024-10-08 09:40:06, writer=재밌는 사람 96, viewCount=0, replyCount=8)]
+[2024-10-15 09:02:50:50128] DEBUG 11596 --- [nio-8181-exec-9] c.s.s.s.c.m.B.getTotalCount              : ==>  Preparing: SELECT COUNT(*) FROM tbl_board
+[2024-10-15 09:02:50:50129] DEBUG 11596 --- [nio-8181-exec-9] c.s.s.s.c.m.B.getTotalCount              : ==> Parameters: 
+[2024-10-15 09:02:50:50130] DEBUG 11596 --- [nio-8181-exec-9] c.s.s.s.c.m.B.getTotalCount              : <==      Total: 1
+[2024-10-15 09:02:52:51298] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.m.B.updateViewCount            : ==>  Preparing: UPDATE tbl_board SET view_count = view_count + 1 WHERE board_no = ?
+[2024-10-15 09:02:52:51298] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.m.B.updateViewCount            : ==> Parameters: 99(Integer)
+[2024-10-15 09:02:52:51305] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.m.B.updateViewCount            : <==    Updates: 1
+[2024-10-15 09:02:52:51306] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.mapper.BoardMapper.findOne     : ==>  Preparing: SELECT * FROM tbl_board WHERE board_no = ?
+[2024-10-15 09:02:52:51306] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.mapper.BoardMapper.findOne     : ==> Parameters: 99(Integer)
+[2024-10-15 09:02:52:51307] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.mapper.BoardMapper.findOne     : <==      Total: 1
+[2024-10-15 09:02:52:51324] DEBUG 11596 --- [nio-8181-exec-2] c.s.s.s.c.mapper.ReplyMapper.findAll     : ==>  Preparing: SELECT * FROM tbl_reply WHERE board_no = ? ORDER BY reply_no LIMIT ?, ?
+[2024-10-15 09:02:52:51325] DEBUG 11596 --- [nio-8181-exec-2] c.s.s.s.c.mapper.ReplyMapper.findAll     : ==> Parameters: 99(Integer), 0(Integer), 5(Integer)
+[2024-10-15 09:02:52:51327] DEBUG 11596 --- [nio-8181-exec-2] c.s.s.s.c.mapper.ReplyMapper.findAll     : <==      Total: 5
+[2024-10-15 09:02:52:51328] DEBUG 11596 --- [nio-8181-exec-2] c.s.s.s.c.mapper.ReplyMapper.count       : ==>  Preparing: SELECT COUNT(*) FROM tbl_reply WHERE board_no = ?
+[2024-10-15 09:02:52:51328] DEBUG 11596 --- [nio-8181-exec-2] c.s.s.s.c.mapper.ReplyMapper.count       : ==> Parameters: 99(Integer)
+[2024-10-15 09:02:52:51329] DEBUG 11596 --- [nio-8181-exec-2] c.s.s.s.c.mapper.ReplyMapper.count       : <==      Total: 1
+[2024-10-15 09:02:54:54063] DEBUG 11596 --- [nio-8181-exec-3] c.s.s.s.c.mapper.ReplyMapper.delete      : ==>  Preparing: DELETE FROM tbl_reply WHERE reply_no = ?
+[2024-10-15 09:02:54:54063] DEBUG 11596 --- [nio-8181-exec-3] c.s.s.s.c.mapper.ReplyMapper.delete      : ==> Parameters: 33(Integer)
+[2024-10-15 09:02:54:54073] DEBUG 11596 --- [nio-8181-exec-3] c.s.s.s.c.mapper.ReplyMapper.delete      : <==    Updates: 1
+[2024-10-15 09:02:55:55032] DEBUG 11596 --- [nio-8181-exec-5] c.s.s.s.c.mapper.ReplyMapper.findAll     : ==>  Preparing: SELECT * FROM tbl_reply WHERE board_no = ? ORDER BY reply_no LIMIT ?, ?
+[2024-10-15 09:02:55:55033] DEBUG 11596 --- [nio-8181-exec-5] c.s.s.s.c.mapper.ReplyMapper.findAll     : ==> Parameters: 99(Integer), 0(Integer), 5(Integer)
+[2024-10-15 09:02:55:55035] DEBUG 11596 --- [nio-8181-exec-5] c.s.s.s.c.mapper.ReplyMapper.findAll     : <==      Total: 5
+[2024-10-15 09:02:55:55035] DEBUG 11596 --- [nio-8181-exec-5] c.s.s.s.c.mapper.ReplyMapper.count       : ==>  Preparing: SELECT COUNT(*) FROM tbl_reply WHERE board_no = ?
+[2024-10-15 09:02:55:55035] DEBUG 11596 --- [nio-8181-exec-5] c.s.s.s.c.mapper.ReplyMapper.count       : ==> Parameters: 99(Integer)
+[2024-10-15 09:02:55:55037] DEBUG 11596 --- [nio-8181-exec-5] c.s.s.s.c.mapper.ReplyMapper.count       : <==      Total: 1
+[2024-10-15 09:02:58:57509] DEBUG 11596 --- [nio-8181-exec-6] c.s.s.s.c.mapper.ReplyMapper.save        : ==>  Preparing: INSERT INTO tbl_reply (reply_text, reply_writer, board_no, account) VALUES (?, ?, ?, ?)
+[2024-10-15 09:02:58:57510] DEBUG 11596 --- [nio-8181-exec-6] c.s.s.s.c.mapper.ReplyMapper.save        : ==> Parameters: dd(String), 시스템모니터(String), 99(Integer), park1234(String)
+[2024-10-15 09:02:58:57631] WARN  11596 --- [nio-8181-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+[2024-10-15 09:03:03:62759] DEBUG 11596 --- [nio-8181-exec-7] c.s.s.s.c.mapper.ReplyMapper.save        : ==>  Preparing: INSERT INTO tbl_reply (reply_text, reply_writer, board_no, account) VALUES (?, ?, ?, ?)
+[2024-10-15 09:03:03:62760] DEBUG 11596 --- [nio-8181-exec-7] c.s.s.s.c.mapper.ReplyMapper.save        : ==> Parameters: 안녕하세요(String), 시스템모니터(String), 99(Integer), park1234(String)
+[2024-10-15 09:03:03:62763] WARN  11596 --- [nio-8181-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+[2024-10-15 09:03:11:70862] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.mapper.ReplyMapper.save        : ==>  Preparing: INSERT INTO tbl_reply (reply_text, reply_writer, board_no, account) VALUES (?, ?, ?, ?)
+[2024-10-15 09:03:11:70863] DEBUG 11596 --- [nio-8181-exec-8] c.s.s.s.c.mapper.ReplyMapper.save        : ==> Parameters: 안녕하세요 만나서반가워요 은주야 뭐해(String), 시스템모니터(String), 99(Integer), park1234(String)
+[2024-10-15 09:03:11:70866] WARN  11596 --- [nio-8181-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+[2024-10-15 09:03:26:85354] DEBUG 11596 --- [nio-8181-exec-9] c.s.s.s.c.mapper.ReplyMapper.modify      : ==>  Preparing: UPDATE tbl_reply SET reply_text = ? WHERE reply_no = ?
+[2024-10-15 09:03:26:85354] DEBUG 11596 --- [nio-8181-exec-9] c.s.s.s.c.mapper.ReplyMapper.modify      : ==> Parameters: 안녕(String), 342(Integer)
+[2024-10-15 09:03:26:85371] DEBUG 11596 --- [nio-8181-exec-9] c.s.s.s.c.mapper.ReplyMapper.modify      : <==    Updates: 1
+[2024-10-15 09:03:26:85377] DEBUG 11596 --- [nio-8181-exec-4] c.s.s.s.c.mapper.ReplyMapper.findAll     : ==>  Preparing: SELECT * FROM tbl_reply WHERE board_no = ? ORDER BY reply_no LIMIT ?, ?
+[2024-10-15 09:03:26:85378] DEBUG 11596 --- [nio-8181-exec-4] c.s.s.s.c.mapper.ReplyMapper.findAll     : ==> Parameters: 99(Integer), 0(Integer), 5(Integer)
+[2024-10-15 09:03:26:85379] DEBUG 11596 --- [nio-8181-exec-4] c.s.s.s.c.mapper.ReplyMapper.findAll     : <==      Total: 5
+[2024-10-15 09:03:26:85379] DEBUG 11596 --- [nio-8181-exec-4] c.s.s.s.c.mapper.ReplyMapper.count       : ==>  Preparing: SELECT COUNT(*) FROM tbl_reply WHERE board_no = ?
+[2024-10-15 09:03:26:85379] DEBUG 11596 --- [nio-8181-exec-4] c.s.s.s.c.mapper.ReplyMapper.count       : ==> Parameters: 99(Integer)
+[2024-10-15 09:03:26:85380] DEBUG 11596 --- [nio-8181-exec-4] c.s.s.s.c.mapper.ReplyMapper.count       : <==      Total: 1
+[2024-10-15 09:20:07:496] INFO  8136 --- [           main] c.s.s.SpringstudyApplication             : Starting SpringstudyApplication using Java 17.0.12 with PID 8136 (C:\Users\playdata\Desktop\develop\springStudy\build\classes\java\main started by playdata in C:\Users\playdata\Desktop\develop\springStudy)
+[2024-10-15 09:20:07:496] DEBUG 8136 --- [           main] c.s.s.SpringstudyApplication             : Running with Spring Boot v3.2.10, Spring v6.1.13
+[2024-10-15 09:20:07:497] INFO  8136 --- [           main] c.s.s.SpringstudyApplication             : No active profile set, falling back to 1 default profile: "default"
+[2024-10-15 09:20:08:2276] INFO  8136 --- [           main] c.s.s.SpringstudyApplication             : Started SpringstudyApplication in 2.14 seconds (process running for 2.657)
+[2024-10-15 09:20:43:36552] INFO  8136 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-10-15 09:20:43:36553] INFO  8136 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-10-15 09:20:47:40755] INFO  8136 --- [nio-8181-exec-7] c.s.s.s.c.c.MemberController             : /members/sign-up: GET
+[2024-10-15 09:20:53:46636] INFO  8136 --- [nio-8181-exec-5] c.s.s.s.c.c.MemberController             : /members/check: async GET!
+[2024-10-15 09:20:53:46636] DEBUG 8136 --- [nio-8181-exec-5] c.s.s.s.c.c.MemberController             : type: account, keyword: qwer1234
+[2024-10-15 09:20:53:46857] DEBUG 8136 --- [nio-8181-exec-5] c.s.s.s.c.m.MemberMapper.existsById      : ==>  Preparing: SELECT COUNT(*) FROM tbl_member WHERE account = ?
+[2024-10-15 09:20:53:46877] DEBUG 8136 --- [nio-8181-exec-5] c.s.s.s.c.m.MemberMapper.existsById      : ==> Parameters: qwer1234(String)
+[2024-10-15 09:20:53:46894] DEBUG 8136 --- [nio-8181-exec-5] c.s.s.s.c.m.MemberMapper.existsById      : <==      Total: 1
+[2024-10-15 09:21:09:62781] INFO  8136 --- [nio-8181-exec-7] c.s.s.s.c.c.MemberController             : /members/check: async GET!
+[2024-10-15 09:21:09:62782] DEBUG 8136 --- [nio-8181-exec-7] c.s.s.s.c.c.MemberController             : type: email, keyword: awed@naver.com
+[2024-10-15 09:21:09:62782] DEBUG 8136 --- [nio-8181-exec-7] c.s.s.s.c.m.MemberMapper.existsById      : ==>  Preparing: SELECT COUNT(*) FROM tbl_member WHERE email = ?
+[2024-10-15 09:21:09:62782] DEBUG 8136 --- [nio-8181-exec-7] c.s.s.s.c.m.MemberMapper.existsById      : ==> Parameters: awed@naver.com(String)
+[2024-10-15 09:21:09:62783] DEBUG 8136 --- [nio-8181-exec-7] c.s.s.s.c.m.MemberMapper.existsById      : <==      Total: 1
+[2024-10-15 09:21:12:65784] WARN  8136 --- [nio-8181-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public java.lang.String com.study.springstudy.springmvc.chap04.controller.MemberController.signUp(com.study.springstudy.springmvc.chap04.dto.request.SignUpRequestDto): [Field error in object 'signUpRequestDto' on field 'name': rejected value [박]; codes [Size.signUpRequestDto.name,Size.name,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [signUpRequestDto.name,name]; arguments []; default message [name],6,2]; default message [크기가 2에서 6 사이여야 합니다]] ]
+[2024-10-15 09:34:41:501] INFO  9372 --- [           main] c.s.s.SpringstudyApplication             : Starting SpringstudyApplication using Java 17.0.12 with PID 9372 (C:\Users\playdata\Desktop\develop\springStudy\build\classes\java\main started by playdata in C:\Users\playdata\Desktop\develop\springStudy)
+[2024-10-15 09:34:41:502] DEBUG 9372 --- [           main] c.s.s.SpringstudyApplication             : Running with Spring Boot v3.2.10, Spring v6.1.13
+[2024-10-15 09:34:41:502] INFO  9372 --- [           main] c.s.s.SpringstudyApplication             : No active profile set, falling back to 1 default profile: "default"
+[2024-10-15 09:34:43:2282] INFO  9372 --- [           main] c.s.s.SpringstudyApplication             : Started SpringstudyApplication in 2.186 seconds (process running for 2.604)
+[2024-10-15 09:34:50:9863] INFO  9372 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-10-15 09:34:50:9864] INFO  9372 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-10-15 09:34:51:10190] DEBUG 9372 --- [nio-8181-exec-1] c.s.s.s.c.mapper.BoardMapper.findAll     : ==>  Preparing: SELECT B.board_no, B.title, B.content, B.writer, B.reg_date, B.view_count, COUNT(R.reply_no) AS reply_count FROM tbl_board B LEFT JOIN tbl_reply R ON B.board_no = R.board_no GROUP BY B.board_no ORDER BY board_no DESC LIMIT ?, ?
+[2024-10-15 09:34:51:10208] DEBUG 9372 --- [nio-8181-exec-1] c.s.s.s.c.mapper.BoardMapper.findAll     : ==> Parameters: 0(Integer), 6(Integer)
+[2024-10-15 09:34:51:10231] DEBUG 9372 --- [nio-8181-exec-1] c.s.s.s.c.mapper.BoardMapper.findAll     : <==      Total: 6
+[2024-10-15 09:34:51:10235] INFO  9372 --- [nio-8181-exec-1] c.s.s.s.chap04.service.BoardService      : boardList: [BoardDetailResponseDTO(boardNo=102, title=야호, content=<p>야호야호</p>
+, regDate=2024-10-11 15:17:06, writer=김춘식, viewCount=12, replyCount=2), BoardDetailResponseDTO(boardNo=100, title=재밌는 글 100, content=재밌는 내용 100, regDate=2024-10-08 09:40:06, writer=재밌는 사람 100, viewCount=34, replyCount=13), BoardDetailResponseDTO(boardNo=99, title=재밌는 글 99, content=재밌는 내용 99, regDate=2024-10-08 09:40:06, writer=재밌는 사람 99, viewCount=7, replyCount=13), BoardDetailResponseDTO(boardNo=98, title=재밌는 글 98, content=재밌는 내용 98, regDate=2024-10-08 09:40:06, writer=재밌는 사람 98, viewCount=1, replyCount=6), BoardDetailResponseDTO(boardNo=97, title=재밌는 글 97, content=재밌는 내용 97, regDate=2024-10-08 09:40:06, writer=재밌는 사람 97, viewCount=1, replyCount=9), BoardDetailResponseDTO(boardNo=96, title=재밌는 글 96, content=재밌는 내용 96, regDate=2024-10-08 09:40:06, writer=재밌는 사람 96, viewCount=0, replyCount=8)]
+[2024-10-15 09:34:51:10239] DEBUG 9372 --- [nio-8181-exec-1] c.s.s.s.c.m.B.getTotalCount              : ==>  Preparing: SELECT COUNT(*) FROM tbl_board
+[2024-10-15 09:34:51:10239] DEBUG 9372 --- [nio-8181-exec-1] c.s.s.s.c.m.B.getTotalCount              : ==> Parameters: 
+[2024-10-15 09:34:51:10242] DEBUG 9372 --- [nio-8181-exec-1] c.s.s.s.c.m.B.getTotalCount              : <==      Total: 1
+[2024-10-15 09:34:57:16115] INFO  9372 --- [nio-8181-exec-4] c.s.s.s.c.c.MemberController             : /members/sign-up: GET
+[2024-10-15 09:35:08:27898] INFO  9372 --- [nio-8181-exec-6] c.s.s.s.c.c.MemberController             : /members/check: async GET!
+[2024-10-15 09:35:08:27898] DEBUG 9372 --- [nio-8181-exec-6] c.s.s.s.c.c.MemberController             : type: account, keyword: qwer1234
+[2024-10-15 09:35:08:27899] DEBUG 9372 --- [nio-8181-exec-6] c.s.s.s.c.m.MemberMapper.existsById      : ==>  Preparing: SELECT COUNT(*) FROM tbl_member WHERE account = ?
+[2024-10-15 09:35:08:27899] DEBUG 9372 --- [nio-8181-exec-6] c.s.s.s.c.m.MemberMapper.existsById      : ==> Parameters: qwer1234(String)
+[2024-10-15 09:35:08:27901] DEBUG 9372 --- [nio-8181-exec-6] c.s.s.s.c.m.MemberMapper.existsById      : <==      Total: 1
+[2024-10-15 09:35:25:44501] INFO  9372 --- [nio-8181-exec-4] c.s.s.s.c.c.MemberController             : /members/check: async GET!
+[2024-10-15 09:35:25:44501] DEBUG 9372 --- [nio-8181-exec-4] c.s.s.s.c.c.MemberController             : type: email, keyword: fndkfjkdjk@naver.c
+[2024-10-15 09:35:25:44501] DEBUG 9372 --- [nio-8181-exec-4] c.s.s.s.c.m.MemberMapper.existsById      : ==>  Preparing: SELECT COUNT(*) FROM tbl_member WHERE email = ?
+[2024-10-15 09:35:25:44502] DEBUG 9372 --- [nio-8181-exec-4] c.s.s.s.c.m.MemberMapper.existsById      : ==> Parameters: fndkfjkdjk@naver.c(String)
+[2024-10-15 09:35:25:44503] DEBUG 9372 --- [nio-8181-exec-4] c.s.s.s.c.m.MemberMapper.existsById      : <==      Total: 1
+[2024-10-15 09:35:27:46172] INFO  9372 --- [nio-8181-exec-9] c.s.s.s.c.c.MemberController             : /members/check: async GET!
+[2024-10-15 09:35:27:46172] DEBUG 9372 --- [nio-8181-exec-9] c.s.s.s.c.c.MemberController             : type: email, keyword: fndkfjkdjk@naver.com
+[2024-10-15 09:35:27:46173] DEBUG 9372 --- [nio-8181-exec-9] c.s.s.s.c.m.MemberMapper.existsById      : ==>  Preparing: SELECT COUNT(*) FROM tbl_member WHERE email = ?
+[2024-10-15 09:35:27:46173] DEBUG 9372 --- [nio-8181-exec-9] c.s.s.s.c.m.MemberMapper.existsById      : ==> Parameters: fndkfjkdjk@naver.com(String)
+[2024-10-15 09:35:27:46174] DEBUG 9372 --- [nio-8181-exec-9] c.s.s.s.c.m.MemberMapper.existsById      : <==      Total: 1
+[2024-10-15 09:35:28:47324] INFO  9372 --- [io-8181-exec-10] c.s.s.s.c.c.MemberController             : /members/sign-up: POST!
+[2024-10-15 09:35:28:47324] INFO  9372 --- [io-8181-exec-10] c.s.s.s.c.c.MemberController             : param: SignUpRequestDto(account=qwer1234, password=asdf1234!, name=김이박, email=fndkfjkdjk@naver.com, profileImage=org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@ccc5d7)
+[2024-10-15 09:35:28:47333] INFO  9372 --- [io-8181-exec-10] c.s.s.springmvc.util.FileUtils           : 완성된 경로: C:UsersplaydataDesktopdevelopspringStudypictures\2024\10\15\89ddc2cb306c49268fa4bedaf1979943.jpg
+[2024-10-15 09:35:28:47418] DEBUG 9372 --- [io-8181-exec-10] c.s.s.s.c.mapper.MemberMapper.save       : ==>  Preparing: INSERT INTO tbl_member (account, password, name, email, profile_image) VALUES (?, ?, ?, ?, ?)
+[2024-10-15 09:35:28:47420] DEBUG 9372 --- [io-8181-exec-10] c.s.s.s.c.mapper.MemberMapper.save       : ==> Parameters: qwer1234(String), $2a$10$q5W374A6R7/cIo2OKeyrKuJ3u.XByUCAmy3YVuF7Q2txTiIFhPJSO(String), 김이박(String), fndkfjkdjk@naver.com(String), \2024\10\15\89ddc2cb306c49268fa4bedaf1979943.jpg(String)
+[2024-10-15 09:35:28:47429] DEBUG 9372 --- [io-8181-exec-10] c.s.s.s.c.mapper.MemberMapper.save       : <==    Updates: 1
+[2024-10-15 09:35:38:57890] DEBUG 9372 --- [nio-8181-exec-5] c.s.s.s.c.m.MemberMapper.findOne         : ==>  Preparing: SELECT * FROM tbl_member WHERE account = ?
+[2024-10-15 09:35:38:57891] DEBUG 9372 --- [nio-8181-exec-5] c.s.s.s.c.m.MemberMapper.findOne         : ==> Parameters: qwer1234(String)
+[2024-10-15 09:35:38:57895] DEBUG 9372 --- [nio-8181-exec-5] c.s.s.s.c.m.MemberMapper.findOne         : <==      Total: 1
+[2024-10-15 09:35:38:57978] DEBUG 9372 --- [nio-8181-exec-5] c.s.s.s.c.m.MemberMapper.findOne         : ==>  Preparing: SELECT * FROM tbl_member WHERE account = ?
+[2024-10-15 09:35:38:57978] DEBUG 9372 --- [nio-8181-exec-5] c.s.s.s.c.m.MemberMapper.findOne         : ==> Parameters: qwer1234(String)
+[2024-10-15 09:35:38:57980] DEBUG 9372 --- [nio-8181-exec-5] c.s.s.s.c.m.MemberMapper.findOne         : <==      Total: 1
+[2024-10-15 09:35:38:57986] DEBUG 9372 --- [nio-8181-exec-6] c.s.s.s.c.mapper.BoardMapper.findAll     : ==>  Preparing: SELECT B.board_no, B.title, B.content, B.writer, B.reg_date, B.view_count, COUNT(R.reply_no) AS reply_count FROM tbl_board B LEFT JOIN tbl_reply R ON B.board_no = R.board_no GROUP BY B.board_no ORDER BY board_no DESC LIMIT ?, ?
+[2024-10-15 09:35:38:57986] DEBUG 9372 --- [nio-8181-exec-6] c.s.s.s.c.mapper.BoardMapper.findAll     : ==> Parameters: 0(Integer), 6(Integer)
+[2024-10-15 09:35:38:57990] DEBUG 9372 --- [nio-8181-exec-6] c.s.s.s.c.mapper.BoardMapper.findAll     : <==      Total: 6
+[2024-10-15 09:35:38:57991] INFO  9372 --- [nio-8181-exec-6] c.s.s.s.chap04.service.BoardService      : boardList: [BoardDetailResponseDTO(boardNo=102, title=야호, content=<p>야호야호</p>
+, regDate=2024-10-11 15:17:06, writer=김춘식, viewCount=12, replyCount=2), BoardDetailResponseDTO(boardNo=100, title=재밌는 글 100, content=재밌는 내용 100, regDate=2024-10-08 09:40:06, writer=재밌는 사람 100, viewCount=34, replyCount=13), BoardDetailResponseDTO(boardNo=99, title=재밌는 글 99, content=재밌는 내용 99, regDate=2024-10-08 09:40:06, writer=재밌는 사람 99, viewCount=7, replyCount=13), BoardDetailResponseDTO(boardNo=98, title=재밌는 글 98, content=재밌는 내용 98, regDate=2024-10-08 09:40:06, writer=재밌는 사람 98, viewCount=1, replyCount=6), BoardDetailResponseDTO(boardNo=97, title=재밌는 글 97, content=재밌는 내용 97, regDate=2024-10-08 09:40:06, writer=재밌는 사람 97, viewCount=1, replyCount=9), BoardDetailResponseDTO(boardNo=96, title=재밌는 글 96, content=재밌는 내용 96, regDate=2024-10-08 09:40:06, writer=재밌는 사람 96, viewCount=0, replyCount=8)]
+[2024-10-15 09:35:38:57991] DEBUG 9372 --- [nio-8181-exec-6] c.s.s.s.c.m.B.getTotalCount              : ==>  Preparing: SELECT COUNT(*) FROM tbl_board
+[2024-10-15 09:35:38:57991] DEBUG 9372 --- [nio-8181-exec-6] c.s.s.s.c.m.B.getTotalCount              : ==> Parameters: 
+[2024-10-15 09:35:38:57993] DEBUG 9372 --- [nio-8181-exec-6] c.s.s.s.c.m.B.getTotalCount              : <==      Total: 1
+[2024-10-15 09:35:38:58010] INFO  9372 --- [nio-8181-exec-1] c.s.s.s.c.controller.ImageController     : fullPath: C:UsersplaydataDesktopdevelopspringStudypictures/2024/10/15/89ddc2cb306c49268fa4bedaf1979943.jpg
+[2024-10-15 09:35:44:63520] DEBUG 9372 --- [nio-8181-exec-3] c.s.s.s.c.mapper.BoardMapper.findAll     : ==>  Preparing: SELECT B.board_no, B.title, B.content, B.writer, B.reg_date, B.view_count, COUNT(R.reply_no) AS reply_count FROM tbl_board B LEFT JOIN tbl_reply R ON B.board_no = R.board_no GROUP BY B.board_no ORDER BY board_no DESC LIMIT ?, ?
+[2024-10-15 09:35:44:63521] DEBUG 9372 --- [nio-8181-exec-3] c.s.s.s.c.mapper.BoardMapper.findAll     : ==> Parameters: 0(Integer), 6(Integer)
+[2024-10-15 09:35:44:63526] DEBUG 9372 --- [nio-8181-exec-3] c.s.s.s.c.mapper.BoardMapper.findAll     : <==      Total: 6
+[2024-10-15 09:35:44:63526] INFO  9372 --- [nio-8181-exec-3] c.s.s.s.chap04.service.BoardService      : boardList: [BoardDetailResponseDTO(boardNo=102, title=야호, content=<p>야호야호</p>
+, regDate=2024-10-11 15:17:06, writer=김춘식, viewCount=12, replyCount=2), BoardDetailResponseDTO(boardNo=100, title=재밌는 글 100, content=재밌는 내용 100, regDate=2024-10-08 09:40:06, writer=재밌는 사람 100, viewCount=34, replyCount=13), BoardDetailResponseDTO(boardNo=99, title=재밌는 글 99, content=재밌는 내용 99, regDate=2024-10-08 09:40:06, writer=재밌는 사람 99, viewCount=7, replyCount=13), BoardDetailResponseDTO(boardNo=98, title=재밌는 글 98, content=재밌는 내용 98, regDate=2024-10-08 09:40:06, writer=재밌는 사람 98, viewCount=1, replyCount=6), BoardDetailResponseDTO(boardNo=97, title=재밌는 글 97, content=재밌는 내용 97, regDate=2024-10-08 09:40:06, writer=재밌는 사람 97, viewCount=1, replyCount=9), BoardDetailResponseDTO(boardNo=96, title=재밌는 글 96, content=재밌는 내용 96, regDate=2024-10-08 09:40:06, writer=재밌는 사람 96, viewCount=0, replyCount=8)]
+[2024-10-15 09:35:44:63527] DEBUG 9372 --- [nio-8181-exec-3] c.s.s.s.c.m.B.getTotalCount              : ==>  Preparing: SELECT COUNT(*) FROM tbl_board
+[2024-10-15 09:35:44:63528] DEBUG 9372 --- [nio-8181-exec-3] c.s.s.s.c.m.B.getTotalCount              : ==> Parameters: 
+[2024-10-15 09:35:44:63529] DEBUG 9372 --- [nio-8181-exec-3] c.s.s.s.c.m.B.getTotalCount              : <==      Total: 1
+[2024-10-15 09:35:44:63543] INFO  9372 --- [nio-8181-exec-4] c.s.s.s.c.controller.ImageController     : fullPath: C:UsersplaydataDesktopdevelopspringStudypictures/2024/10/15/89ddc2cb306c49268fa4bedaf1979943.jpg
+[2024-10-15 09:39:23:282483] DEBUG 9372 --- [nio-8181-exec-3] c.s.s.s.c.m.B.updateViewCount            : ==>  Preparing: UPDATE tbl_board SET view_count = view_count + 1 WHERE board_no = ?
+[2024-10-15 09:39:23:282483] DEBUG 9372 --- [nio-8181-exec-3] c.s.s.s.c.m.B.updateViewCount            : ==> Parameters: 100(Integer)
+[2024-10-15 09:39:23:282493] DEBUG 9372 --- [nio-8181-exec-3] c.s.s.s.c.m.B.updateViewCount            : <==    Updates: 1
+[2024-10-15 09:39:23:282493] DEBUG 9372 --- [nio-8181-exec-3] c.s.s.s.c.mapper.BoardMapper.findOne     : ==>  Preparing: SELECT * FROM tbl_board WHERE board_no = ?
+[2024-10-15 09:39:23:282493] DEBUG 9372 --- [nio-8181-exec-3] c.s.s.s.c.mapper.BoardMapper.findOne     : ==> Parameters: 100(Integer)
+[2024-10-15 09:39:23:282495] DEBUG 9372 --- [nio-8181-exec-3] c.s.s.s.c.mapper.BoardMapper.findOne     : <==      Total: 1
+[2024-10-15 09:39:23:282632] INFO  9372 --- [nio-8181-exec-2] c.s.s.s.c.controller.ImageController     : fullPath: C:UsersplaydataDesktopdevelopspringStudypictures/2024/10/15/89ddc2cb306c49268fa4bedaf1979943.jpg
+[2024-10-15 09:39:23:282642] DEBUG 9372 --- [nio-8181-exec-9] c.s.s.s.c.mapper.ReplyMapper.findAll     : ==>  Preparing: SELECT * FROM tbl_reply WHERE board_no = ? ORDER BY reply_no LIMIT ?, ?
+[2024-10-15 09:39:23:282643] DEBUG 9372 --- [nio-8181-exec-9] c.s.s.s.c.mapper.ReplyMapper.findAll     : ==> Parameters: 100(Integer), 0(Integer), 5(Integer)
+[2024-10-15 09:39:23:282645] DEBUG 9372 --- [nio-8181-exec-9] c.s.s.s.c.mapper.ReplyMapper.findAll     : <==      Total: 5
+[2024-10-15 09:39:23:282647] DEBUG 9372 --- [nio-8181-exec-9] c.s.s.s.c.mapper.ReplyMapper.count       : ==>  Preparing: SELECT COUNT(*) FROM tbl_reply WHERE board_no = ?
+[2024-10-15 09:39:23:282647] DEBUG 9372 --- [nio-8181-exec-9] c.s.s.s.c.mapper.ReplyMapper.count       : ==> Parameters: 100(Integer)
+[2024-10-15 09:39:23:282648] DEBUG 9372 --- [nio-8181-exec-9] c.s.s.s.c.mapper.ReplyMapper.count       : <==      Total: 1
+[2024-10-15 09:43:41:473] INFO  14252 --- [           main] c.s.s.SpringstudyApplication             : Starting SpringstudyApplication using Java 17.0.12 with PID 14252 (C:\Users\playdata\Desktop\develop\springStudy\build\classes\java\main started by playdata in C:\Users\playdata\Desktop\develop\springStudy)
+[2024-10-15 09:43:41:474] DEBUG 14252 --- [           main] c.s.s.SpringstudyApplication             : Running with Spring Boot v3.2.10, Spring v6.1.13
+[2024-10-15 09:43:41:475] INFO  14252 --- [           main] c.s.s.SpringstudyApplication             : No active profile set, falling back to 1 default profile: "default"
+[2024-10-15 09:43:43:2303] INFO  14252 --- [           main] c.s.s.SpringstudyApplication             : Started SpringstudyApplication in 2.212 seconds (process running for 2.685)
+[2024-10-15 09:43:52:12196] INFO  14252 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-10-15 09:43:52:12196] INFO  14252 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+[2024-10-15 09:43:55:14899] DEBUG 14252 --- [nio-8181-exec-7] c.s.s.s.c.m.MemberMapper.findOne         : ==>  Preparing: SELECT * FROM tbl_member WHERE account = ?
+[2024-10-15 09:43:55:14919] DEBUG 14252 --- [nio-8181-exec-7] c.s.s.s.c.m.MemberMapper.findOne         : ==> Parameters: qwer1234(String)
+[2024-10-15 09:43:55:14940] DEBUG 14252 --- [nio-8181-exec-7] c.s.s.s.c.m.MemberMapper.findOne         : <==      Total: 1
+[2024-10-15 09:43:55:15029] DEBUG 14252 --- [nio-8181-exec-7] c.s.s.s.c.m.MemberMapper.findOne         : ==>  Preparing: SELECT * FROM tbl_member WHERE account = ?
+[2024-10-15 09:43:55:15030] DEBUG 14252 --- [nio-8181-exec-7] c.s.s.s.c.m.MemberMapper.findOne         : ==> Parameters: qwer1234(String)
+[2024-10-15 09:43:55:15031] DEBUG 14252 --- [nio-8181-exec-7] c.s.s.s.c.m.MemberMapper.findOne         : <==      Total: 1
+[2024-10-15 09:43:55:15057] DEBUG 14252 --- [nio-8181-exec-8] c.s.s.s.c.mapper.BoardMapper.findAll     : ==>  Preparing: SELECT B.board_no, B.title, B.content, B.writer, B.reg_date, B.view_count, COUNT(R.reply_no) AS reply_count FROM tbl_board B LEFT JOIN tbl_reply R ON B.board_no = R.board_no GROUP BY B.board_no ORDER BY board_no DESC LIMIT ?, ?
+[2024-10-15 09:43:55:15057] DEBUG 14252 --- [nio-8181-exec-8] c.s.s.s.c.mapper.BoardMapper.findAll     : ==> Parameters: 0(Integer), 6(Integer)
+[2024-10-15 09:43:55:15064] DEBUG 14252 --- [nio-8181-exec-8] c.s.s.s.c.mapper.BoardMapper.findAll     : <==      Total: 6
+[2024-10-15 09:43:55:15064] INFO  14252 --- [nio-8181-exec-8] c.s.s.s.chap04.service.BoardService      : boardList: [BoardDetailResponseDTO(boardNo=102, title=야호, content=<p>야호야호</p>
+, regDate=2024-10-11 15:17:06, writer=김춘식, viewCount=12, replyCount=2), BoardDetailResponseDTO(boardNo=100, title=재밌는 글 100, content=재밌는 내용 100, regDate=2024-10-08 09:40:06, writer=재밌는 사람 100, viewCount=35, replyCount=13), BoardDetailResponseDTO(boardNo=99, title=재밌는 글 99, content=재밌는 내용 99, regDate=2024-10-08 09:40:06, writer=재밌는 사람 99, viewCount=7, replyCount=13), BoardDetailResponseDTO(boardNo=98, title=재밌는 글 98, content=재밌는 내용 98, regDate=2024-10-08 09:40:06, writer=재밌는 사람 98, viewCount=1, replyCount=6), BoardDetailResponseDTO(boardNo=97, title=재밌는 글 97, content=재밌는 내용 97, regDate=2024-10-08 09:40:06, writer=재밌는 사람 97, viewCount=1, replyCount=9), BoardDetailResponseDTO(boardNo=96, title=재밌는 글 96, content=재밌는 내용 96, regDate=2024-10-08 09:40:06, writer=재밌는 사람 96, viewCount=0, replyCount=8)]
+[2024-10-15 09:43:55:15069] DEBUG 14252 --- [nio-8181-exec-8] c.s.s.s.c.m.B.getTotalCount              : ==>  Preparing: SELECT COUNT(*) FROM tbl_board
+[2024-10-15 09:43:55:15069] DEBUG 14252 --- [nio-8181-exec-8] c.s.s.s.c.m.B.getTotalCount              : ==> Parameters: 
+[2024-10-15 09:43:55:15071] DEBUG 14252 --- [nio-8181-exec-8] c.s.s.s.c.m.B.getTotalCount              : <==      Total: 1
+[2024-10-15 09:43:56:15273] INFO  14252 --- [nio-8181-exec-5] c.s.s.s.c.controller.ImageController     : fullPath: C:UsersplaydataDesktopdevelopspringStudypictures/2024/10/15/89ddc2cb306c49268fa4bedaf1979943.jpg
+[2024-10-15 09:43:58:17435] DEBUG 14252 --- [nio-8181-exec-6] c.s.s.s.c.m.B.updateViewCount            : ==>  Preparing: UPDATE tbl_board SET view_count = view_count + 1 WHERE board_no = ?
+[2024-10-15 09:43:58:17435] DEBUG 14252 --- [nio-8181-exec-6] c.s.s.s.c.m.B.updateViewCount            : ==> Parameters: 100(Integer)
+[2024-10-15 09:43:58:17445] DEBUG 14252 --- [nio-8181-exec-6] c.s.s.s.c.m.B.updateViewCount            : <==    Updates: 1
+[2024-10-15 09:43:58:17446] DEBUG 14252 --- [nio-8181-exec-6] c.s.s.s.c.mapper.BoardMapper.findOne     : ==>  Preparing: SELECT * FROM tbl_board WHERE board_no = ?
+[2024-10-15 09:43:58:17446] DEBUG 14252 --- [nio-8181-exec-6] c.s.s.s.c.mapper.BoardMapper.findOne     : ==> Parameters: 100(Integer)
+[2024-10-15 09:43:58:17448] DEBUG 14252 --- [nio-8181-exec-6] c.s.s.s.c.mapper.BoardMapper.findOne     : <==      Total: 1
+[2024-10-15 09:43:58:17593] INFO  14252 --- [nio-8181-exec-8] c.s.s.s.c.controller.ImageController     : fullPath: C:UsersplaydataDesktopdevelopspringStudypictures/2024/10/15/89ddc2cb306c49268fa4bedaf1979943.jpg
+[2024-10-15 09:43:58:17602] DEBUG 14252 --- [nio-8181-exec-4] c.s.s.s.c.mapper.ReplyMapper.findAll     : ==>  Preparing: SELECT * FROM tbl_reply WHERE board_no = ? ORDER BY reply_no LIMIT ?, ?
+[2024-10-15 09:43:58:17603] DEBUG 14252 --- [nio-8181-exec-4] c.s.s.s.c.mapper.ReplyMapper.findAll     : ==> Parameters: 100(Integer), 0(Integer), 5(Integer)
+[2024-10-15 09:43:58:17606] DEBUG 14252 --- [nio-8181-exec-4] c.s.s.s.c.mapper.ReplyMapper.findAll     : <==      Total: 5
+[2024-10-15 09:43:58:17607] DEBUG 14252 --- [nio-8181-exec-4] c.s.s.s.c.mapper.ReplyMapper.count       : ==>  Preparing: SELECT COUNT(*) FROM tbl_reply WHERE board_no = ?
+[2024-10-15 09:43:58:17608] DEBUG 14252 --- [nio-8181-exec-4] c.s.s.s.c.mapper.ReplyMapper.count       : ==> Parameters: 100(Integer)
+[2024-10-15 09:43:58:17609] DEBUG 14252 --- [nio-8181-exec-4] c.s.s.s.c.mapper.ReplyMapper.count       : <==      Total: 1
+[2024-10-15 12:18:57:441] INFO  9084 --- [           main] c.s.s.SpringstudyApplication             : Starting SpringstudyApplication using Java 17.0.12 with PID 9084 (C:\Users\playdata\Desktop\develop\springStudy\build\classes\java\main started by playdata in C:\Users\playdata\Desktop\develop\springStudy)
+[2024-10-15 12:18:57:442] DEBUG 9084 --- [           main] c.s.s.SpringstudyApplication             : Running with Spring Boot v3.2.10, Spring v6.1.13
+[2024-10-15 12:18:57:442] INFO  9084 --- [           main] c.s.s.SpringstudyApplication             : No active profile set, falling back to 1 default profile: "default"
+[2024-10-15 12:18:59:2226] INFO  9084 --- [           main] c.s.s.SpringstudyApplication             : Started SpringstudyApplication in 2.136 seconds (process running for 2.556)
+[2024-10-15 12:19:06:9052] INFO  9084 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[2024-10-15 12:19:06:9053] INFO  9084 --- [nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[2024-10-15 12:19:09:12080] DEBUG 9084 --- [nio-8181-exec-5] c.s.s.s.c.mapper.BoardMapper.findAll     : ==>  Preparing: SELECT B.board_no, B.title, B.content, B.writer, B.reg_date, B.view_count, COUNT(R.reply_no) AS reply_count FROM tbl_board B LEFT JOIN tbl_reply R ON B.board_no = R.board_no GROUP BY B.board_no ORDER BY board_no DESC LIMIT ?, ?
+[2024-10-15 12:19:09:12101] DEBUG 9084 --- [nio-8181-exec-5] c.s.s.s.c.mapper.BoardMapper.findAll     : ==> Parameters: 0(Integer), 6(Integer)
+[2024-10-15 12:19:09:12126] DEBUG 9084 --- [nio-8181-exec-5] c.s.s.s.c.mapper.BoardMapper.findAll     : <==      Total: 6
+[2024-10-15 12:19:09:12129] INFO  9084 --- [nio-8181-exec-5] c.s.s.s.chap04.service.BoardService      : boardList: [BoardDetailResponseDTO(boardNo=102, title=야호, content=<p>야호야호</p>
+, regDate=2024-10-11 15:17:06, writer=김춘식, viewCount=12, replyCount=2), BoardDetailResponseDTO(boardNo=100, title=재밌는 글 100, content=재밌는 내용 100, regDate=2024-10-08 09:40:06, writer=재밌는 사람 100, viewCount=36, replyCount=13), BoardDetailResponseDTO(boardNo=99, title=재밌는 글 99, content=재밌는 내용 99, regDate=2024-10-08 09:40:06, writer=재밌는 사람 99, viewCount=7, replyCount=13), BoardDetailResponseDTO(boardNo=98, title=재밌는 글 98, content=재밌는 내용 98, regDate=2024-10-08 09:40:06, writer=재밌는 사람 98, viewCount=1, replyCount=6), BoardDetailResponseDTO(boardNo=97, title=재밌는 글 97, content=재밌는 내용 97, regDate=2024-10-08 09:40:06, writer=재밌는 사람 97, viewCount=1, replyCount=9), BoardDetailResponseDTO(boardNo=96, title=재밌는 글 96, content=재밌는 내용 96, regDate=2024-10-08 09:40:06, writer=재밌는 사람 96, viewCount=0, replyCount=8)]
+[2024-10-15 12:19:09:12133] DEBUG 9084 --- [nio-8181-exec-5] c.s.s.s.c.m.B.getTotalCount              : ==>  Preparing: SELECT COUNT(*) FROM tbl_board
+[2024-10-15 12:19:09:12133] DEBUG 9084 --- [nio-8181-exec-5] c.s.s.s.c.m.B.getTotalCount              : ==> Parameters: 
+[2024-10-15 12:19:09:12135] DEBUG 9084 --- [nio-8181-exec-5] c.s.s.s.c.m.B.getTotalCount              : <==      Total: 1
+[2024-10-15 12:19:20:23205] INFO  9084 --- [io-8181-exec-10] c.s.s.s.c.c.MemberController             : /members/sign-up: GET
+[2024-10-15 12:24:49:352076] INFO  9084 --- [nio-8181-exec-9] c.s.s.s.c.c.MemberController             : 이메일 인증 요청 들어옴!: tlgyrjs@gmail.com

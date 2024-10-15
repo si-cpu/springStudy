@@ -1,0 +1,57 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.springstudy.springmvc.chap04.mapper.MemberMapper">
+
+    <insert id="save">
+        INSERT INTO tbl_member
+            (account, password, name, email, profile_image)
+        VALUES
+            (#{account}, #{password}, #{name}, #{email}, #{profileImage})
+    </insert>
+
+    <select id="existsById" resultType="boolean">
+        SELECT COUNT(*)
+        FROM tbl_member
+        <if test="type == 'account'">
+            WHERE account = #{keyword}
+        </if>
+        <if test="type == 'email'">
+            WHERE email = #{keyword}
+        </if>
+    </select>
+
+    <select id="findOne" resultType="member">
+        SELECT *
+        FROM tbl_member
+        WHERE account = #{account}
+    </select>
+
+    <update id="saveAutoLogin">
+        UPDATE tbl_member
+        SET session_id = #{sessionId}, limit_time = #{limitTime}
+        WHERE account = #{account}
+    </update>
+
+    <select id="findByCookie" resultType="member">
+        SELECT
+            account, name, email, auth, limit_time
+        FROM tbl_member
+        WHERE session_id = #{sessionId}
+    </select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
